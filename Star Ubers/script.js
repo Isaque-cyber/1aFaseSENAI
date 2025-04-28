@@ -1,0 +1,4 @@
+function jornada (){
+let distCorrida = 
+
+}
