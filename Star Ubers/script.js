@@ -1,29 +1,28 @@
 function jornada(){
     let distCorrida = Number(prompt("Digite a ditância da corrida: (Km)"))
-    let resultadoTempo = distCorrida / 300000
 
-    if(resultadoTempo < 60 && resultadoTempo >=0){
-        alert("O tempo foi: "+ resultadoTempo + "segundo(s).")
+    let tempoSeg = distCorrida  / 300000
+    let tempoMinuto = tempoSeg / 60
+    let tempoHoras = tempoMinuto / 60
+    let tempoDias = tempoHoras / 24
+    let tempoMes = tempoDias / 30
+    let tempoAno = tempoMes / 12
+    let sobraSeg =  tempoSeg % 60
+    let sobraMinuto = tempoMinuto % 60
+    let sobraHoras = tempoHoras % 24
+    let sobraDias = tempoDias % 30
+    let sobraMes = tempoMes % 12
+    let sobraAnos = tempoAno %12
+    if(tempo < 60){
+        alert(" tempo " + tempoSeg + "segundos")
+    }else if(tempoMinuto>60){
+        alert("tempo "+ tempoMinuto+ "minutos," +"e" +sobraSeg )
+    }else if(tempoHoras > 24)
+    alert("tempo "+ tempoHoras+ "Horas," + " e " +sobraMinuto +" e " + sobraSeg+ ".")
 
-    }else if(resultadoTempo >= 60 && resultadoTempo< 3600){
-        resultadoTempo = resultadoTempo / 60
-        alert("O tempo foi: "+ resultadoTempo  +"minuto(s).")
-   
-    }else if(resultadoTempo >= 3600 && resultadoTempo< 86400){ 
-        resultadoTempo = resultadoTempo / 3600
-        alert("O tempo foi: "+ resultadoTempo  +"hora(s).")
-
-    }else if(resultadoTempo >= 86400 && resultadoTempo<604800){ 
-        resultadoTempo = resultadoTempo / 86400
-        alert("O tempo foi: "+ resultadoTempo  +"hora(s).")
-
-    }else if(resultadoTempo >= 2629800 && resultadoTempo < 31557600 ){
-        resultadoTempo = resultadoTempo / 2629800
-        alert("O tempo foi: "+ resultadoTempo  + "dias(s).")
-
-    }else{(resultadoTempo >= 31557600 )
-        resultadoTempo = resultadoTempo / 31557600
-        alert("O tempo foi: "+ resultadoTempo  + "mese(s).")
-    }
-
+    }else if(tempoDias > 30){
+    alert("tempo "+tempoDias+"e "+ sobraHorasHoras+ "Horas," + " e " +sobraMinuto +" e " + sobraSeg+ ".")
+    
+      
 }
+   
