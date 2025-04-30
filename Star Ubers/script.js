@@ -17,12 +17,13 @@ function jornada(){
         alert(" tempo " + tempoSeg + "segundos")
     }else if(tempoMinuto>60){
         alert("tempo "+ tempoMinuto+ "minutos," +"e" +sobraSeg )
-    }else if(tempoHoras > 24)
+
+    }else if(tempoHoras > 24){
     alert("tempo "+ tempoHoras+ "Horas," + " e " +sobraMinuto +" e " + sobraSeg+ ".")
 
     }else if(tempoDias > 30){
     alert("tempo "+tempoDias+"e "+ sobraHorasHoras+ "Horas," + " e " +sobraMinuto +" e " + sobraSeg+ ".")
-    
+    }
       
 }
    
