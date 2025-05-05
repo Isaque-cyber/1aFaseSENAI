@@ -23,7 +23,16 @@ function jornada(){
 
     }else if(tempoDias > 30){
     alert("tempo "+tempoDias+"e "+ sobraHorasHoras+ "Horas," + " e " +sobraMinuto +" e " + sobraSeg+ ".")
+    
+    }else if(tempoMes > 12){
+    alert("tempo "+tempoMes+" e "+ sobraDias+" dias"+ sobraHoras+ "horas"+ sobraMinuto +"minutos"+ tempoSeg +"segundos")
+
+    }else if(tempoAno >12){
+    alert("tempo "+anos+" anos, e "+tempoMes+" meses "+ sobraDias+" dias "+ sobraHoras+ "horas"+ sobraMinuto +"minutos"+ tempoSeg +"segundos")
     }
+
+
+
       
 }
    
