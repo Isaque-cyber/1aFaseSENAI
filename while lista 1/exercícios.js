@@ -748,7 +748,7 @@ function exercicio48(){
 
 
 
-    function exercício6(){
+    function L2exercício6(){
         let soma = 0
         
         let cont= 1

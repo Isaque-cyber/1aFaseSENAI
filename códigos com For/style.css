@@ -1,4 +1,8 @@
-body {
+.conteiner {
 display: flex;
-align-items: center;
+flex-direction: row;
+justify-items: center;
+justify-content: space-around;
+width: 100px;
+height: 80px;
 }
