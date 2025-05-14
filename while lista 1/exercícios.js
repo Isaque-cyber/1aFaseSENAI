@@ -1,137 +1,160 @@
-function exercicio1() {
-    let numero = 0
-    
-    while (numero <= 20) {
-        alert ("O número é: " + numero)
-        numero += 2
-    }
+
+// 1. Mostre apenas os números pares de 1 a 20
+function exercício1(){
+let contador = 1
+while(contador <= 20){
+    let resto = contador % 2
+    if(resto === 0) alert("Número: " + contador + " é Par")
+        
+    contador++
 }
-
-function exercicio2() {
-    let numero = 1
-
-    while (numero <= 20) {
-        alert ("O número é: " + numero)
-        numero += 2
-    }
 }
+// 2. Mostre apenas os números ímpares de 1 a 20
+    function exercício2(){
+        let contador = 1
+        while(contador <= 20){
+        let resto = contador % 2
+        if(resto !== 0) alert("Número: " + contador + " é impar")
+        contador++
+    }
+    }
 
-function exercicio3() {
-    let quantidade = 0
-    let mensagem = "Olá mundo!!!"
-
-    while (quantidade <= 5){
-        alert (mensagem)
+    // 3. Imprima “Olá, mundo!” 5 vezes.
+    function exercício3(){
+        quantidade = 0
+        let mensagem = "Óla mundo"
+        while(quantidade <=5){
         quantidade++
-    }
-}
-
-function exercicio4() {
-    let numero = 0
+        
+        
+        alert(mensagem)}
     
-    while (numero <= 50){
-        alert ("O número é: " + numero)
-        numero += 5
     }
-}
 
-function exercicio5(){
-    let numero = 100
-
-    while (numero >= 0){
-        alert ("O número é: " + numero)
-        numero -= 10
-    }
-}
-
-function exercicio6(){
-    let numero = 0
-
-    while (numero <= 30){
-        alert ("O número é: " + numero)
-        numero += 3
-    }
-}
-
-function exercicio7(){
-    let numero = 1
-    let quadradoNum 
-
-    while (numero <= 10){
-        quadradoNum = numero * numero
-        alert ("O número é: " + numero + " e ao quadrado é: " + quadradoNum)
-        numero++
-    }
-}
-
-function exercicio8(){
-    let numero = 1
-    let cuboNum
-
-    while (numero <= 10){
-        cuboNum = numero * numero * numero
-        alert ("O número é: " + numero + " e ao cubo é: " + cuboNum)
-        numero++
-    }
-}
-
-function exercicio9(){
-    let numero = 1
-
-    while (numero <= 15){
-        if (numero % 2 == 0){
-            alert ("O número " + numero + " é par.")
-        }else{
-            alert ("O número " + numero + " é ímpar.")
+    // 4. Conte de 0 a 50 pulando de 5 em 5.
+    function exercício4(){
+        let numero = 0
+        while(numero <= 50){
+        alert("O número é "+ numero)
+        numero +=5
         }
+
+    }
+
+    // 5. Conte de 100 até 0 diminuindo de 10 em 10.
+    function exercício5(){
+        let numero = 100
+        while(numero > 0){
+        alert("O número é "+ numero)
+        numero -=10
+        }
+    }        
+
+
+    // 6. Conte de 0 até 30 e mostre apenas os múltiplos de 3.
+    function exercício6(){
+        let numero = 0
+        while(numero < 30){
+        alert("O número "+ numero+ " é multiplo de 3")
+        numero +=3
+        }
+        
+    }        
+
+    
+    //7. Conte de 1 até 10 e mostre o quadrado de cada número.
+    function exercício7(){
+        let numero = 1
+        while(numero <= 10){
+        let quadrado = numero * numero
+        alert("O quadrado do número "+ numero + " é " + quadrado)
         numero++
+        }
     }
-}
 
-function exercicio10(){
-    let numero = 0
-
-    while (numero <= 100){
-        alert ("O número é: " + numero)
-        numero += 4
+    // 8.Conte de 1 até 10 e mostre o cubo de cada número.
+    function exercício8(){
+        let numero = 1
+        let cubo = numero * numero * numero
+        while(numero <= 10){
+        cubo = numero * numero * numero
+        alert("O cubo do número "+ numero + " é " + cubo) 
+        numero++ 
+        
+        }
     }
-}
 
-function exercicio11(){
-    let numero = 0 
-    let frase = "Número: X"
+    // 9.Conte de 1 até 15 e mostre se o número é par ou ímpar.
+    function exercício9(){
+        let numero = 1 
+        while(numero <= 15){   
+            
+            let resto = numero % 2
+            if(resto === 0){
+                alert("O número "+ numero + " é par")
+            }else{
+                alert("O número "+ numero + " é impar")
+            }
+            numero++
+        }
 
-    while (numero <= 10){
-        alert (numero + " " + frase)
-        numero++
+    }   
+    
+    // 10.Conte até 100 e imprima somente os divisíveis por 4
+    function exercício10(){
+        let numero = 1
+        while(numero <= 100){
+            let resto = numero % 4
+            if(resto === 0){
+                alert("O número "+ numero + " é divisível por 4")
+            }
+            numero++
+        }
     }
-}
 
-function exercicio12(){
-    let numero = 1
+    // 11.Faça um loop que mostre os números de 1 a 10 com a frase “Número: X”.
+    function exercício11(){
+        let  numero = 1
+        while(numero <= 10){
+            alert("Número: " + numero)
 
-    while (numero <= 20){
-        if (numero % 3 == 0){
-            alert ("O número é: " + numero + " Fizz")
-        }else{
-            alert ("O número é: " + numero)
+            numero++
+        }
     }
-        numero++
-    }
-}
 
-function exercicio13(){
-    let numero = 1
+    // 12.Conte até 20 e exiba “Fizz” para múltiplos de 3.
+    function exercício12(){
+        numero = 1
+        while(numero <= 20){
+            let resto = numero % 3
+            if(resto === 0){
+                alert("Fizz")
+            }else{
+                alert(numero)
+            }
+            numero++
+        }
 
-    while (numero <= 20){
-        if (numero % 5 == 0){
-            alert ("O número é: " + numero + " Buzz")
-        }else{
-            alert ("O número é: " + numero)
-    }
-        numero++
-    }
-}
+    }     
+
+    // 3.Conte até 20 e exiba “Buzz” para múltiplos de 5.1
+    function exercício13(){
+        numero = 1
+        while(numero <= 20){
+            let resto = numero % 5
+            if(resto === 0){
+                alert("Buzz")
+            }else{
+                alert(numero)
+            }
+            numero++
+        }
+
+    }     
+
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
 function exercicio14(){
     let numero = 1
