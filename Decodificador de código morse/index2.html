@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Decodificador Morse com Espaço</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f0f0;
+            text-align: center;
+            padding: 30px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        textarea {
+            width: 80%;
+            height: 120px;
+            padding: 10px;
+            margin: 10px auto;
+            font-size: 16px;
+            display: block;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #saida {
+            background-color: #e6ffe6;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 10px;
+            background-color: #4285f4;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #3367d6;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tradutor Morse → Texto (com tecla Espaço)</h1>
+
+    <textarea id="entrada" placeholder="Digite o código Morse aqui... Ex: .... --- .-.. .-"></textarea>
+
+    <button onclick="converterMorseParaTexto()">Traduzir Agora</button>
+
+    <textarea id="saida" placeholder="Texto traduzido..." readonly></textarea>
+
+    <script>
+        const morseToText = {
+            ".-": "A", "-...": "B", "-.-.": "C", "-..": "D",
+            ".": "E", "..-.": "F", "--.": "G", "....": "H",
+            "..": "I", ".---": "J", "-.-": "K", ".-..": "L",
+            "--": "M", "-.": "N", "---": "O", ".--.": "P",
+            "--.-": "Q", ".-.": "R", "...": "S", "-": "T",
+            "..-": "U", "...-": "V", ".--": "W", "-..-": "X",
+            "-.--": "Y", "--..": "Z",
+            "-----": "0", ".----": "1", "..---": "2", "...--": "3",
+            "....-": "4", ".....": "5", "-....": "6", "--...": "7",
+            "---..": "8", "----.": "9",
+            "/": " "
+        };
+
+        function converterMorseParaTexto() {
+            const entrada = document.getElementById("entrada").value.trim();
+            const palavras = entrada.split(" ");
+            const traduzido = palavras.map(s => morseToText[s] || "").join("");
+            document.getElementById("saida").value = traduzido;
+        }
+
+        // Detectar tecla espaço
+        document.getElementById("entrada").addEventListener("keydown", function(event) {
+            if (event.code === "Space" || event.key === " ") {
+                setTimeout(converterMorseParaTexto, 100); // espera o espaço ser adicionado
+            }
+        });
+    </script>
+</body>
+</html>
