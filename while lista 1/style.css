@@ -1,3 +1,19 @@
+body{
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Distância entre os grupos de botões */
+    align-items: center;
+    background-image: url(forCode/bg,pnj);
+    background-size: cover;
+    background-position:center ;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    }
+    h1{
+        color: aliceblue;
+        text-align: center;
+    }
+
 /* Definindo o estilo da container geral para alinhar os botões */
 .container {
     display: flex;
