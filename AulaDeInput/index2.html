@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Média Ponderada</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+    
+  <h2>Calcular Média Ponderada</h2>
+
+  <!-- Notas e pesos -->
+  <div class="preenchimento">
+    <label>Nota 1: <input type="number" id="nota1"></label>
+    <label>Peso 1: <input type="number" id="pesoNota1"></label><br>
+
+    <label>Nota 2: <input type="number" id="nota2"></label>
+    <label>Peso 2: <input type="number" id="pesoNota2"></label><br>
+
+    <label>Nota 3: <input type="number" id="nota3"></label>
+    <label>Peso 3: <input type="number" id="pesoNota3"></label><br>
+
+    <label>Nota 4: <input type="number" id="nota4"></label>
+    <label>Peso 4: <input type="number" id="pesoNota4"></label><br>
+
+    <label>Nota 5: <input type="number" id="nota5"></label>
+    <label>Peso 5: <input type="number" id="pesoNota5"></label><br><br>
+
+    <button onclick="calcular()">Calcular Média</button>
+  </div>
+
+  <!-- Resultado -->
+  <h3 id="resultado"></h3>
+
+  <!-- JavaScript -->
+  <script src="script2.js">
+    function calcular() {
+      const notas = [
+        Number(document.getElementById("nota1").value),
+        Number(document.getElementById("nota2").value),
+        Number(document.getElementById("nota3").value),
+        Number(document.getElementById("nota4").value),
+        Number(document.getElementById("nota5").value)
+      ];
+
+      const pesos = [
+        Number(document.getElementById("pesoNota1").value),
+        Number(document.getElementById("pesoNota2").value),
+        Number(document.getElementById("pesoNota3").value),
+        Number(document.getElementById("pesoNota4").value),
+        Number(document.getElementById("pesoNota5").value)
+      ];
+
+   
+      const somaNotasPonderadas = 
+    (nota1 * peso1) + (nota2 * peso2) + (nota3 * peso3) + (nota4 * peso4) + (nota5 * peso5);
+
+  const somaPesos = peso1 + peso2 + peso3 + peso4 + peso5;
+
+  const media = somaPesos === 0 ? 0 : somaNotasPonderadas / somaPesos;
+
+  document.getElementById("resultado").innerText = 
+    `Média Ponderada: ${media.toFixed(2)}`;
+}
+  </script>
+</body>
+</html>

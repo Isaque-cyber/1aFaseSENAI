@@ -1,0 +1,13 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+    color: aliceblue;
+    background-image: url(bg.jpg);
+}
+h1{
+    text-align: center;
+    
+}

@@ -1,6 +1,19 @@
 body{
-    color: aliceblue;
-    background-color: black;
+display: flex;
+flex-direction: column;
+align-items: center;
+
+
+}
+h1{
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+
+.centralizar h1{
+    color: rgb(71, 0, 151);
+    border-radius: 50 rem;
+    
     
 
 }

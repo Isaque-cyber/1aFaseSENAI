@@ -1,0 +1,17 @@
+body{
+    align-items: center;
+    background-image: url(bg.jpg);
+    align-items: center;
+
+}
+.preenchimento{
+    color: aliceblue;
+    justify-content: center;
+    
+}
+h2{
+    color: rgb(177, 0, 0);
+    text-align: center;
+    
+
+}
