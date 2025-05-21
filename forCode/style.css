@@ -1,9 +1,10 @@
 body{
 display: flex;
+justify-content: center;
 flex-direction: column;
 gap: 20px; /* Distância entre os grupos de botões */
 align-items: center;
-background-image: url("685972492624.jpg");
+background-image: url(bg.jpg);
 background-size: cover;
 background-position:center ;
 background-repeat: no-repeat;
@@ -12,4 +13,7 @@ background-attachment: fixed;
 h1{
     color: aliceblue;
     text-align: center;
+}
+.allbuttons{
+   
 }
