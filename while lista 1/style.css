@@ -2,15 +2,47 @@ body{
 display: flex;
 justify-content: center;
 flex-direction: column;
-gap: 20px; /* Distância entre os grupos de botões */
+gap: 30px 50px; /* Distância entre os grupos de botões */
 align-items: center;
 background-image: url(bg.jpg);
 background-size: cover;
 background-position:center ;
 background-repeat: no-repeat;
 background-attachment: fixed;
+flex-wrap: wrap;
+}
+.container{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    
+
 }
 h1{
     color: aliceblue;
     text-align: center;
 }
+.botoes{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    border-radius: 50%;
+    
+   
+}
+.botoesL2{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.botoesL3{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
