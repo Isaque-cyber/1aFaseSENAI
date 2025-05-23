@@ -16,8 +16,7 @@ flex-wrap: wrap;
     justify-content: center;
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    
+    gap: 20px;  
 
 }
 h1{
