@@ -1,0 +1,42 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(23, 44, 62);
+}
+
+.Versículos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+
+}
+
+.Voltar {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+    align-items: flex-end;
+}
+
+button:hover {
+    background-color: aqua;
+}
+
+h1 {
+    color: rgb(255, 255, 255);
+}
+
+h2 {
+    color: rgb(170, 154, 222);
+}
+
+h3 {
+    color: rgb(0, 209, 90);
+    padding: 50px;
+    
+}
