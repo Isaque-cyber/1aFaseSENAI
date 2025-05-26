@@ -1,12 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style3.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Telas</title>
 </head>
 <body>
-    <script src="script3.js"></script>
+    <nav>
+        <button onclick="mostrarLogin()">Login</button>
+        <button onclick="mostrarCadastro()">Cadastro</button>
+    </nav>
+    <h1>Tela supimpa</h1>
+    <div id="login">
+        <h2>Login</h2>
+        <div class="ContainerInput">
+            <label for="">Nome</label>
+            <input type="text">
+        </div>
+        <div class="ContainerInput">
+            <label for="">Senha</label>
+            <input type="password">
+        </div>
+        <button>Logar</button>
+    </div>
+    <div id="cadastro">
+        <h2>Cadastro</h2>
+        <div class="ContainerInput">
+            <label for="">Nome</label>
+            <input type="text">
+        </div>
+        <div class="ContainerInput">
+            <label for="">Email</label>
+            <input type="text">
+        </div>
+        <div class="ContainerInput">
+            <label for="">Senha</label>
+            <input type="password">
+        </div>
+        <button>Cadastrar</button>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
