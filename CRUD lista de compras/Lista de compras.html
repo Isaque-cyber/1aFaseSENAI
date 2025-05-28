@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de compras</title>
+    <link rel="stylesheet" href="Lista de compras.css">
+</head>
+
+<body>
+    <div class="containerPrincipal" id="containerPrincipal">
+
+
+        <div class="titulo">
+            <h1 style="text-align: center;"> Lista de compras</h1>
+            <button class="cadastrar" onclick="ChamarCadastrar()">Cadastrar novos itens</button>
+        </div>
+
+        <div class="conteudo_lista">
+            <ol id="minhaLista">
+             
+            </ol>
+
+        </div>
+    </div>
+
+    <div class="conteudo_cadastro" id="conteudo_cadastro">
+
+
+        <div class="titulo">
+            <h1 style="color: rgb(223, 224, 221);">Cadastrar item </h1>
+            <button onclick="voltar()">Voltar</button>
+        </div>
+
+        <div class="conteudoCadastro">
+            <label style="color: azure;" for="nome">Nome do item</label>
+            <input type="text" name="nome" id="nome">
+        </div>
+
+        <div class="botaoDiBusca">
+            <button onclick="addItem()">Cadastrar</button>
+        </div>
+
+    </div>
+
+    <script src="Lista de compras.js"></script>
+</body>
+
+</html>

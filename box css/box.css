@@ -2,12 +2,12 @@
 
 p{
     font-family: "Exile", system-ui;
-    font-weight: 400;
+    font-weight: 400px;
     font-style: normal;
     color: blue;
     text-align: center;
-    font-size: small;
-    padding: 90px;
+    font-size: 6px;
+    padding: 120px;
 }
 h1{
     text-align: center;
@@ -18,5 +18,6 @@ h1{
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 50px;
     
 }
