@@ -1,0 +1,20 @@
+body{
+ display: flex;
+  flex-direction: column;
+  background-color: rgb(39, 18, 18);
+}
+h1{
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
+.nextB{
+  display: flex;
+  justify-content: center;
+  color: #25cf55;
+
+}
+.input1{
+  display: flex;
+  justify-content: center;
+  color: #25cf55;
+}
