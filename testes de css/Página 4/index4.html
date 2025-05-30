@@ -12,49 +12,97 @@
 
     <h1>Tela supimpa (Jesus vive)</h1>
     <div class="container">
-        <div id="login">
+        <section id="login">
             <h2>Login</h2>
 
             <div class="containerInput">
-                <label for="Nome">Nome: </label>
-                <input type="text" id="Nome" name="Nome" required>
+                <label for="usarname">Nome: </label>
+                <input type="usarname" id="Lnome"  name="usarname" required>
             </div>
 
             <div class="containerInputs">
                 <label for="Senha">Senha: </label>
-                <input type="password" id="Senha" name="Senha" required>
+                <input type="password" id="Lsenha" required>
             </div>
 
 
             <button onclick="Logar()">logar</button>
 
 
-        </div>
+        </section>
 
 
-        <div id="cadastro">
+        <section id="cadastro">
             <h2>cadastro</h2>
 
-            <label for="name">Nome: </label>
-            <input type="name" id="Nome" name="name" required>
+            <div class="Cnome">
+                <label for="username">Nome: </label>
+                <input type="username" id="Cnome"  name="usarname">
+            </div>
+            <div class="Cemail">
+                <label for="email">Email: </label>
+                <input type="email" id="Cemail" name="email" required>
+            </div>
+            <div class="Csenha">
+                <label for="Senha">Senha: </label>
+                <input type="password" id="Csenha" required>
+            </div>
 
-            <label for="email">Email: </label>
-            <input type="email" id="email" name="email" required>
+            <button onclick="cadastrar()" class="Bcadastrar">Cadastrar</button>
 
-            <label for="Senha">Senha: </label>
-            <input type="password" id="Senha" name="Senha" required>
 
-            <button class="Login">Cadastrar</button>
 
-        </div>
+
+
+
+
+
+
+        </section>
+
+
+
+
+        <section id="produtos">
+
+            <h3 > produtos</h3>
+            <div class="Produts">
+                <label for="produtoss">Produto 1:
+                    <input type="text" id="produto1" name="username" required>
+                </label>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </section>
         <nav>
-            <div class="Login">
+
+            <div class="logar">
                 <button onclick="mostrarLogin()">Login</button>
             </div>
-            <br>
+
             <div class="Cadastro">
                 <button onclick="mostrarCadastro()">Cadastro</button>
             </div>
+            <div class="produtoss">
+                <button onclick="mostrarProdutos()">Produtos</button>
+            </div>
+
         </nav>
     </div>
 

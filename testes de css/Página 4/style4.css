@@ -5,9 +5,16 @@ body {
     justify-content:center ;
     justify-items: center;
     align-items: center;
-
+    
 }
 
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+}
 
 
 #login {
@@ -17,8 +24,8 @@ body {
     align-items: center;
     gap: 10px;
     border-radius: 10px;
-    background-color: #140772;
-    color: aliceblue;
+    background-color: #4905884e;
+    color: rgb(255, 255, 255);
     /*background-color: antiquewhite;   muda a cor do que está dentro do login*/
     padding: 10px;
     /*espaçamento dentro do conteudo*/
@@ -26,7 +33,7 @@ body {
     /*espaçamento fora do cont*/
     width: 300px;
     min-height: 300px;
-    box-shadow: 0px 0px 15px rgb(102, 49, 11);
+    box-shadow: 0px 0px 15px rgb(17, 255, 128);
     height: 10px ;
 
 
@@ -37,9 +44,9 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 1px solid #888;
+    border: 1px solid #fceaea;
     border-radius: 10px;
-    background-color: #31aa8f;
+    background-color: #0a2149;
     color: aliceblue;
     /*background-color: antiquewhite;   muda a cor do que está dentro do login*/
     padding: 10px;
@@ -47,23 +54,11 @@ body {
     /* afasta o login do cadastro*/
     width: 300px;
     min-height: 100px;
-
+    gap: 5px;
+    box-shadow: 0 0 10px #00ff00;
 }
 
-h1 {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-direction: column;
 
-    color: rgb(255, 255, 255);
-
-}
-
-h2 {
-    color: aliceblue;
-    font-size: 70px;
-}
 
 .containerinput {
     display: flex;
@@ -74,7 +69,7 @@ h2 {
 input {
     border-radius: 5px;
     height: 25px;
-
+    
 }
 
 button {
@@ -82,13 +77,14 @@ button {
     height: 30px;
     border-radius: 5px;
     border: none;
-    padding: 1opx;
+    padding: 10px;
     gap: 10px 10px;
 }
 
 button:hover {
-    background-color: aqua;
+    background-color: rgb(19, 235, 255);
     scale: 1.1;
+    
 
 
 
@@ -96,18 +92,55 @@ button:hover {
 
 .Login{
     color: #15846c;
-  
+    
 }
-
-.container{
-    justify-items: center;
-    justify-content: center;
-    align-items: center;
+.cadastrar{
+    display: flex;
     flex-direction: column;
-
+    padding: 50px;
+    gap: 40px 40px
 }
-nav{
+
+nav{    
     display: flex;
     flex-direction: row;
     gap: 10px 10px;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: aqua;
+    height: 20vh;
+}
+
+h2 {
+    color: aliceblue;
+    font-size: 70px;
+}
+
+#produtos{
+   display: none;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   padding: 50px;
+   gap: 10px 10px;
+   color: #fceaea;
+   
+   
+}
+h3{
+    padding: 20px;
+    color: white;
+}
+.Produto1{
+    padding-left: 10px;
 }
