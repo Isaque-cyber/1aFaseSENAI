@@ -1,11 +1,11 @@
-
+/* 
 #login{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 20px;
-    /* border: 1px solid #666; */
+    /* border: 1px solid #666; 
     border-radius: 10px;
     padding: 10px;
     margin: 10px;
@@ -22,7 +22,6 @@
     gap: 20px;
     display: none;
     border: 1px solid #666;
-    /* background-color: aqua; */
     border-radius: 10px;
     padding: 10px;
     margin: 10px;
@@ -51,7 +50,7 @@ button{
 button:hover{
     background-color: aqua;
     scale: 1.1;
-    /* color: #fff; */
+    /
 }
 
 body{
@@ -59,4 +58,91 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+} */
+
+    body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgb(0, 0, 0);
+}
+.ContainerGeral{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+    width: 300px;
+    min-height: 300px;
+    border: 1px solid #e7e1e1;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(203, 190, 190, 0.497);  
+    background-color: #000000;
+    background-image: url(tornado-8236696_1280.jpg);
+    color: #e7e1e1;
+
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 100%;    
+    max-width: 400px;
+    padding: 20px;
+    border: 1px solid #666;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.497);
+    background-color: #f9f9f9; */
+
+}
+
+#Login{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px 10px;
+
+}
+
+#Cadastro{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px 10px;
+
+}
+
+#Produtos{
+display: none;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+gap: 10px 10px;
+
+  
+
+}
+
+#navbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    height: 30px;
+    
+ 
+}
+button:hover{
+    background-color: aqua;
+    scale: 1.1;
+}
+h1{
+    color: rgb(255, 255, 255);
+    font-size: 20px;
 }
