@@ -35,17 +35,16 @@ function logar() {
     }
 }
 
-function mostrarLogin() {
-    esconderBotoes()
-    document.getElementById('Login').style.display = 'flex'
-    document.getElementById('Lnome').focus()
-
-
-}
 function mostrarCadastro() {
     esconderBotoes()
     document.getElementById('Cadastro').style.display = 'flex'
     document.getElementById('Cnome').focus()
+}
+
+function mostrarLogin() {
+    esconderBotoes()
+    document.getElementById('Login').style.display = 'flex'
+    document.getElementById('Lnome').focus()
 
 }
 function mostrarProdutos() {
@@ -70,7 +69,6 @@ function limparInputs() {
 }
 
 function inicializar() {
-    mostrarLogin()
-
+    mostrarCadastro()
 }
 

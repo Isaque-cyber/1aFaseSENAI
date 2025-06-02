@@ -69,6 +69,7 @@ body{
     background-color: rgb(0, 0, 0);
 }
 .ContainerGeral{
+    background-image: url(tornado-8236696_1280.jpg);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -81,7 +82,6 @@ body{
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(203, 190, 190, 0.497);  
     background-color: #000000;
-    background-image: url(tornado-8236696_1280.jpg);
     color: #e7e1e1;
 
     /* display: flex;
@@ -133,8 +133,10 @@ gap: 10px 10px;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 10px 10px;
     height: 30px;
+    border: none;
+    border-radius:  50%;
     
  
 }
