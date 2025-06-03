@@ -1,12 +1,17 @@
 body{
-    display: flex;
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+height: 100vh;
+background-color: black;
+
+}
+.containerGeral {
+  display: flex;
+  flex-direction: row;
     justify-content: center;
     align-items: center;
-    height: 80vh;
-}
-
-.botoes{
-    display: flex;
-    justify-content: space-between;
-    width: 10%;
+    gap: 20px;
+    
 }
