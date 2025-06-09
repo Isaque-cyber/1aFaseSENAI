@@ -1,17 +1,18 @@
-body{
-display: flex;
-flex-direction: row;
-justify-content: center;
-align-items: center;
-height: 100vh;
-background-color: black;
+body {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: black;
 
 }
+
 .containerGeral {
   display: flex;
   flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+
 }
