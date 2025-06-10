@@ -40,27 +40,20 @@ input{
     height: 25px;
 }
 
-button{
-    background-color: #00ee00;
-    height: 30px;
-    border-radius: 5px;
-    border: none;
-    padding: 10px;
-}
 button:hover{
     background-color: aqua;
     scale: 1.1;
     /
-}
-
-body{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-} */
-
+    }
+    
     body{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        } */
+
+body {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -68,7 +61,8 @@ body{
     height: 100vh;
     background-color: rgb(0, 0, 0);
 }
-.ContainerGeral{
+
+.ContainerGeral {
     background-image: url(tornado-8236696_1280.jpg);
     display: flex;
     flex-direction: column;
@@ -80,26 +74,26 @@ body{
     min-height: 300px;
     border: 1px solid #e7e1e1;
     border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(203, 190, 190, 0.497);  
+    box-shadow: 0px 0px 10px rgba(203, 190, 190, 0.497);
     background-color: #000000;
     color: #e7e1e1;
 
     /* display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    width: 100%;    
-    max-width: 400px;
-    padding: 20px;
-    border: 1px solid #666;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.497);
-    background-color: #f9f9f9; */
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            width: 100%;    
+            max-width: 400px;
+            padding: 20px;
+            border: 1px solid #666;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.497);
+            background-color: #f9f9f9; */
 
 }
 
-#Login{
+#Login {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -108,7 +102,7 @@ body{
 
 }
 
-#Cadastro{
+#Cadastro {
     display: none;
     flex-direction: column;
     justify-content: center;
@@ -117,34 +111,49 @@ body{
 
 }
 
-#Produtos{
-display: none;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-gap: 10px 10px;
-
-  
-
+button {
+    background-color: #00ee00;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    padding: 10px;
 }
 
-#navbar{
-    display: flex;
-    flex-direction: row;
+#Produtos {
+    display: none;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 10px 10px;
-    height: 30px;
-    border: none;
-    border-radius:  50%;
-    
- 
+
+
+
 }
-button:hover{
+
+#navbar {
+    display: none;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px ;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+
+
+}
+
+button:hover {
     background-color: aqua;
     scale: 1.1;
 }
-h1{
+
+h1 {
     color: rgb(255, 255, 255);
     font-size: 20px;
 }
+
+.bt-secundario{
+    background-color: #e7e1e1;
+}
+

@@ -1,20 +1,23 @@
 inicializar()
 
 
+let usuarios = []
 
-
-let usuario = {
-    nome: '',
-    email: '',
-    senha: ''
-}
+// let teste = [usuario1, usuario2]
 function cadastrar() {
-    usuario.nome = document.getElementById('Cnome').value
-    usuario.email = document.getElementById('Cemail').value
-    usuario.senha = document.getElementById('Csenha').value
+    let usuario = {
+        
+            nome: document.getElementById('Cnome').value,
+            email: document.getElementById('Cemail').value,
+            senha: document.getElementById('Csenha').value
+        
+    }
+
+    usuarios.push(usuario)
+
     alert("Cadastrado com sucesso!! :D")
 
-    console.log(usuario)
+    console.log(usuarios)
 
     limparInputs()
     mostrarLogin()
@@ -25,13 +28,16 @@ function logar() {
     let nome = document.getElementById('Lnome').value
     let senha = document.getElementById('Lsenha').value
 
-    if ((nome === usuario.nome || nome === usuario.email) && senha === usuario.senha) {
-        alert("Login efetuado com sucesso!")
-        limparInputs()
-        mostrarProdutos()
-        // document.getElementById('navbar').style.display = 'block'
-    } else {
-        alert("Login não efetuado sem sucesso!")
+    for(let i=0; i<usuarios.leigth; i++){
+        
+            if ((nome === usuarios[i].nome || nome === usuarios[i].email) && senha === usuarios[i].senha) {
+                alert("Login efetuado com sucesso! Olá"+ usuarios[i].nome)
+                limparInputs()
+                mostrarProdutos()
+            } else {
+                alert("Login não efetuado sem sucesso!")
+            }
+
     }
 }
 
@@ -48,8 +54,11 @@ function mostrarLogin() {
 
 }
 function mostrarProdutos() {
+
     esconderBotoes()
     document.getElementById('Produtos').style.display = 'flex'
+    document.getElementById('navbar').style.display = 'flex'
+
     document.getElementById('Pprodutos').focus()
 }
 
@@ -69,6 +78,10 @@ function limparInputs() {
 }
 
 function inicializar() {
-    mostrarCadastro()
+    mostrarLogin()
 }
 
+for (let i= 0; i<usuarios.length; i++){
+
+    alert(usuarios[i].nome)
+}
