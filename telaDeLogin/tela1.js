@@ -25,10 +25,11 @@ function cadastrar() {
 }
 
 function logar() {
+    console.log(usuarios)
     let nome = document.getElementById('Lnome').value
     let senha = document.getElementById('Lsenha').value
 
-    for(let i=0; i<usuarios.leigth; i++){
+    for(let i=0; i<usuarios.length; i++){
         
             if ((nome === usuarios[i].nome || nome === usuarios[i].email) && senha === usuarios[i].senha) {
                 alert("Login efetuado com sucesso! Olá"+ usuarios[i].nome)
@@ -76,12 +77,11 @@ function limparInputs() {
     document.getElementById('Lnome').value = ''
     document.getElementById('Lsenha').value = ''
 }
-
-function inicializar() {
-    mostrarLogin()
-}
-
 for (let i= 0; i<usuarios.length; i++){
 
     alert(usuarios[i].nome)
 }
+function inicializar() {
+    mostrarCadastro()
+}
+
