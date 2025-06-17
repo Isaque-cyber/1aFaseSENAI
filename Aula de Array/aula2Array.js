@@ -10,7 +10,7 @@ let maiorNumero = Math.max(23,3,5,6,4,2,55,90,45,40,30,20,10)
 console.log(maiorNumero)
 
 //16
-let menorNumero = Math.min(...numero2)
+let menorNumero = Math.min(...numeros2)
 console.log(menorNumero)
 
 //18
@@ -51,7 +51,7 @@ let novoArray = [...removerDuplicados]
 console.log(removerDuplicados)
 
 
-let arraySemDuplicadosc = []
+let arraySemDuplicados = []
 for(let i = 0; i< valores.length; i++){
     if(!arraySemDuplicados.includes(valores[i])){
         arraySemDuplicados.push
@@ -68,7 +68,7 @@ for (let i = 0; i< valores.length; i++){
         contador++
     }
 }
-let quantasVezesApareceAlex = valores2.filter(valo=> valor === 'Alex').length
+let quantasVezesApareceAlex = valores2.filter(valor=> valor === 'Alex').length
 console.log(contador, quantasVezesApareceAlex)
 
 //23
@@ -87,3 +87,77 @@ console.log(frutas.indexOf("Kiwi"))
 
 //26
 let mistos = ["Abacaxi","Laranja","Kiwi","Banana","Maçã"]
+
+//27
+let palavras2 = ['teste','seila','qualquer','coisa']
+let palavrasMaiusculo = palavras2.map((palavra) => {
+    let [primeira, ...restante] = palavra
+    console.log(primeira, restante)
+    let novaletra = primeira.toUpperCase()
+    return novaletra + restante.join('')
+
+})
+
+console.log(palavrasMaiusculo)
+
+//28. Verifique se todos os elementos são números com .every().
+let elementos = [3,4,5,6,7,8]
+let saonumeros = elementos.every(elemento => typeof elemento === "number")
+console.log(saonumeros)
+
+//29. Verifique se ao menos um número é maior que 100 usando  .some()
+let elementos2 = [33,45,500,6,7,8]
+let teste = elementos2.some(elemento => elemento > 100)
+console.log(teste)
+
+
+//30
+let arraydearray = [34,434,[342,3,656,4], [2,[45,34,[344,343,]]]]
+let arrays = arraydearray.flat(3)
+console.log(arrays)
+
+//31
+
+
+
+//32
+let notas = [5,6,7,8]
+function calcularMedia(array){
+    let soma = array.reduce((acumulador, atual) => acumulador +=atual, 0)
+    return soma/array.length
+}
+console.log(calcularMedia(notas))
+
+//33
+
+
+
+//34
+function rotacionar(array){
+    console.log('pop', array.pop())
+    array.unshift(array.pop());
+    return array;
+}
+console.log(rotacionar(notas))
+
+//35
+
+
+
+//36
+
+
+
+//37. Conte as vogais em cada string de um array.
+function contarVogais(palavra){
+    return (palavra.match(/[aeiou]/gi ||[])).length
+}
+let meuarray = ['palavra','teste','oi']
+console.log(meuarray.map(palavra => {
+    return{
+        palavra: palavra,
+        vogais: contarVogais(palavra)
+    }
+}))
+
+//38

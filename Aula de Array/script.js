@@ -29,14 +29,14 @@
 
 //14
 
-// soma = numeros.reduce(acumulado, valoratual => acumulado+valoratual, 0)
-// console.log(soma)
+soma = numeros.reduce(acumulado, valoratual => acumulado+valoratual, 0)
+console.log(soma)
 
-// let nomes2 = ["joão", "Clara","isaque", "jonas", "Pedro", "tiago", "barnabe", "Paulo"]
-// let nomesVirgula = nomes2.reduce((acumulado, valoratual) => acumulado +","+ valoratual, "" )
+let nomes2 = ["joão", "Clara","isaque", "jonas", "Pedro", "tiago", "barnabe", "Paulo"]
+let nomesVirgula = nomes2.reduce((acumulado, valoratual) => acumulado +","+ valoratual, "" )
 
-
-// console.log(nomesVirgula);
+ console.log(nomesVirgula);
+//
 
 
 let numeros = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
