@@ -68,3 +68,4 @@ console.log(numerosInvertidos)
 // for(let contador = 1; contador < nomes.length; contador++){
 //     console.log(nomes[contador])
 // }
+
