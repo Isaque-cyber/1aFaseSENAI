@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <title>Seus Hábitos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h2 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 5px;
+        }
+        ul {
+            list-style: disc inside;
+            margin-bottom: 20px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        button {
+            margin-left: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Seus Hábitos</h1>
+
+    <section>
+        <h2>Beber Água</h2>
+        <ul id="listaAgua"></ul>
+    </section>
+
+    <section>
+        <h2>Exercícios Físicos</h2>
+        <ul id="listaExercicio"></ul>
+    </section>
+
+    <button onclick="limparLista()">🗑️ Limpar Todos os Hábitos</button><br><br>
+
+    <a href="pg1.html">➕ Adicionar nova observação</a>
+
+    <script>
+        let habitos = JSON.parse(localStorage.getItem("habitos")) || {
+            agua: [],
+            exercicio: []
+        };
+
+        const ulAgua = document.getElementById("listaAgua");
+        const ulExercicio = document.getElementById("listaExercicio");
+
+        function salvarHabitos() {
+            localStorage.setItem("habitos", JSON.stringify(habitos));
+            location.reload();
+        }
+
+        function editarItem(habito, index) {
+            const novoTexto = prompt("Editar observação:", habitos[habito][index].texto);
+            if (novoTexto && novoTexto.trim() !== "") {
+                habitos[habito][index].texto = novoTexto.trim();
+                habitos[habito][index].data = new Date().toLocaleString();
+                salvarHabitos();
+            }
+        }
+
+        function removerItem(habito, index) {
+            if (confirm("Deseja remover esta observação?")) {
+                habitos[habito].splice(index, 1);
+                salvarHabitos();
+            }
+        }
+
+        function limparLista() {
+            if (confirm("Tem certeza que deseja apagar todas as observações?")) {
+                localStorage.removeItem("habitos");
+                location.reload();
+            }
+        }
+
+        function renderizarLista(habito, ul) {
+            ul.innerHTML = "";
+            habitos[habito].forEach((item, index) => {
+                const li = document.createElement("li");
+                li.innerHTML = `
+                    ${item.texto} <br />
+                    <small><i>Adicionado em: ${item.data}</i></small>
+                    <br />
+                    <button onclick="editarItem('${habito}', ${index})">✏️ Editar</button>
+                    <button onclick="removerItem('${habito}', ${index})">❌ Remover</button>
+                `;
+                ul.appendChild(li);
+            });
+            if(habitos[habito].length === 0){
+                ul.innerHTML = "<li><i>Sem observações ainda.</i></li>";
+            }
+        }
+
+        renderizarLista("agua", ulAgua);
+        renderizarLista("exercicio", ulExercicio);
+    </script>
+
+</body>
+</html>

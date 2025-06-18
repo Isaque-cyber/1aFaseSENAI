@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <title>Adicionar Hábitos</title>
+</head>
+<body>
+
+    <h1>Adicionar Observações dos Hábitos</h1>
+
+    <label for="agua">Beber água:</label><br />
+    <input type="text" id="agua" placeholder="Ex: Bebi 2 litros hoje" /><br /><br />
+
+    <label for="exercicio">Exercícios físicos:</label><br />
+    <input type="text" id="exercicio" placeholder="Ex: Corri 30 minutos" /><br /><br />
+
+    <button onclick="adicionarERedirecionar()">Adicionar</button>
+
+    <script>
+        function adicionarERedirecionar() {
+            const agua = document.getElementById("agua").value.trim();
+            const exercicio = document.getElementById("exercicio").value.trim();
+
+            // Busca dados atuais do localStorage ou cria estrutura inicial
+            let habitos = JSON.parse(localStorage.getItem("habitos")) || {
+                agua: [],
+                exercicio: []
+            };
+
+            const agora = new Date().toLocaleString();
+
+            if (agua !== "") {
+                habitos.agua.push({ texto: agua, data: agora });
+            }
+
+            if (exercicio !== "") {
+                habitos.exercicio.push({ texto: exercicio, data: agora });
+            }
+
+            localStorage.setItem("habitos", JSON.stringify(habitos));
+
+            window.location.href = "pg2.html";
+        }
+    </script>
+
+</body>
+</html>
