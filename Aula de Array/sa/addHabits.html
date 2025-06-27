@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control Life</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Control <span class="life-highlight">Life</span></h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="about.html">Sobre</a></li>
+                <li><a href="login.html">Login/Registre-se</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>      
+    <div class="fundo-central">
+        <h1>Adicionar hábitos</h1>
+        <div id="habit-form">
+            <label for="habit-name">Nome do hábito:</label>
+            <input type="text" id="habit-name" name="habit-name" class="campo" required>
+            <label for="habit-description">Descrição:</label>
+            <textarea id="habit-description" name="habit-description" required></textarea>
+            <label for="habit-frequency">Frequência:</label> 
+            <select id="habit-frequency" name="habit-frequency" required>
+                <option value="diário">Diário</option>
+                <option value="semanal">Semanal</option>
+                <option value="mensal">Mensal</option>
+                <option value="personalizado">Personalizado</option>
+            </select>
+            <label for="habit-start-date">Data de início:</label>
+            <input type="date" id="habit-start-date" name="habit-start-date" class="campo" required>
+            <label for="habit-end-date">Data de término:</label>
+            <input type="date" id="habit-end-date" name="habit-end-date"  class="campo" required>
+            <label for="habit-goal">Meta:</label>
+            <input type="text" id="habit-goal" name="habit-goal" class="campo" required>
+            <label for="habit-notes">Notas:</label>
+            <textarea id="habit-notes" name="habit-notes"></textarea>
+            <label for="habit-reminder">Lembrete:</label>
+            <input type="time" id="habit-reminder" name="habit-reminder" class="campo">
+            <label for="habit-color">Cor:</label>
+            <input type="color" id="habit-color" name="habit-color" value="#ffc400" class="campo">
+            <button id="add-habit-btn" type="button" onclick="addHabit()">Adicionar Hábito</button>
+            <!-- </form> -->
+        </div>
+    </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 Control Life. Todos os direitos reservados.</p>
+        <p><a href="#home" class="menu-link">Voltar ao topo</a></p>
+    </footer>
+
+    <script src="addhabits.js"></script>
+</body>
+</html>
