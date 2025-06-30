@@ -1,205 +1,219 @@
+// 📘 Lista de Exercícios – Operações com Arrays
+// 📌 Array de Entrada:
 
-// 13. Filtre os números pares de um array com .filter().
-let numeros = [23,3,5,6,4,2,55,90,45,40,30,20,10]
+const numeros = [5, 12, 8, 130, 44, 7, 3, 19, 22];
+const nomes = ["Ana", "Carlos", "Beatriz", "Daniel", "Eduarda", "Bruno"];
+const produtos = [
+ { nome: "Camiseta", preco: 29.9, categoria: "Roupas" },
+ { nome: "Notebook", preco: 2500, categoria: "Eletrônicos" },
+ { nome: "Mouse", preco: 59.9, categoria: "Eletrônicos" },
+ { nome: "Meias", preco: 9.9, categoria: "Roupas" },
+ { nome: "Teclado", preco: 120, categoria: "Eletrônicos" }
+];
 
-let numerosPares = numeros.filter(numero => numero % 2 === 0)
+// 💡 Exercícios com numeros
+// 1. Filtrar números maiores que 10.
 
-let numerosImpares = numeros.filter(numero => numero % 2 !== 0)
+let numerosMaiores10 = numeros.filter (numeros => numeros > 10)
+console.log (numerosMaiores10)
 
-console.log(numerosPares)
-console.log(numerosImpares)
 
-// 15. Encontre o maior número de um array.
-let numeros2 = [23,3,5,6,4,2,55,90,45,40,30,20,10]
-let maiorNumero = Math.max(...numeros2)
-console.log(maiorNumero)
-//16. Encontre o menor número de um array.
-let menorNumero = Math.min(...numeros2)
-console.log(menorNumero)
+// 2. Dobrar todos os números do array.
 
-//18. Junte dois arrays em um só usando .concat() ou spread [...].
-let array1 = ['teste', 'teste2']
-let array2 = ['teste3', 'teste4']
-let arrayJuntao = [...array1, ...array2]
+let numerosDobrados = numeros.map (numeros => numeros * 2)
+console.log (numerosDobrados)
 
-console.log(arrayJuntao)
+// 3. Somar todos os números do array.
 
-//19. Ordene um array de strings em ordem alfabética.
+let somaNumeros = numeros.reduce ((acumulador , atual) => acumulador + atual, 0)
+console.log (somaNumeros) 
 
-let palavras = ['casa', 'banana', 'abacate']; 
-palavras.sort();
+// 4. Encontrar o maior número.
 
-console.log(palavras)
+let maiorNumero = Math.max (...numeros)
+console.log (maiorNumero)
 
-//20. Ordene um array de números do maior para o menor.
-let numeros3 = [10, 20 ,1000 ,90 ,50 ,60]
-let numeros3Desc = []
-console.log(numeros3Desc)
-numeros3.sort((a,b)=> b-a)
-console.log(numeros3)
+// 5. Encontrar o menor número.
 
-// 21. Remova valores duplicados de um array.
-let valores = ['Alex', 'Alex', 'João', 'João', 'Claudia', 'Maria']
-let removerDuplicados = new Set([...valores])
-let novoArray = [...removerDuplicados]
-console.log(novoArray)
+let menorNumero = Math.min (...numeros)
+console.log (menorNumero)
 
-let arraySemDuplicados = []
-for(let i=0; i< valores.length; i++){
-    if(!arraySemDuplicados.includes(valores[i])){
-        arraySemDuplicados.push(valores[i])
-    }
+// 6. Ordenar os números em ordem crescente.
+
+let numCrescente = [numeros.sort ((a,b) => a - b)]
+console.log (numCrescente)
+
+// 7. Criar um novo array com apenas os números ímpares.
+
+let numImpares = numeros.filter (numeros => numeros % 2 !== 0)
+console.log (numImpares)
+
+// 8. Verificar se todos os números são maiores que 3.
+
+let numMaiorQue3 = numeros.every (numeros => numeros > 3)
+console.log (numMaiorQue3)
+
+// 9. Verificar se existe algum número maior que 100.
+
+let numMaiorQue100 = numeros.some (numeros => numeros > 100)
+console.log (numMaiorQue100)
+
+// 10. Retornar a média dos números.
+
+function CalcularMedia(array){
+let soma = array.reduce ((acumulador, atual) => acumulador += atual, 0)
+return soma/array.length
 }
-console.log(arraySemDuplicados)
-
-//22. Conte quantas vezes um valor aparece em um array.
-let valores2 = ['Alex', 'Alex', 'João', 'João', 'Claudia', 'Maria']
-let contador= 0
-for(let i=0; i< valores.length; i++){
-    if(valores2[i] == 'Alex'){
-       contador++
-    }
-}
-let quantasVezesApareceAlex = valores2.filter(valor=> valor === 'Alex').length
-console.log(contador, quantasVezesApareceAlex)
-
-// 23. Transforme todos os itens do array em uma única string separada por vírgulas com .join().
-let usuarios = ['Alex', 'Joana', 'Carlos', 'João', 'Claudia', 'Maria']
-console.log(usuarios.join(', '))
-
-// 24. Substitua todas as ocorrências de "banana" por "maçã" em um array.
-let frutas = ['Abacaxi', 'Laranja', 'Kiwi', 'Banana', 'Banana', 'Maçã']
-let frutasNovo = frutas.map(fruta => fruta === 'Banana' ? 'Maçã' : fruta)
-console.log(frutasNovo)
-
-// 25. Encontre o índice de um valor específico com .indexOf().
-let frutas2 = ['Abacaxi', 'Laranja', 'Kiwi', 'Caqui', 'Banana', 'Maçã']
-console.log(frutas.indexOf('Kiwi'))
-
-// 26. Crie um novo array contendo apenas as strings de um array com tipos mistos.
-let mistos = ['Abacaxi', 'Laranja', 34, 322, {nome:'Alex', idade:22}]
-let strings = mistos.filter(valor=> typeof valor === "string")
-console.log(strings)
-
-//27. Coloque a primeira letra de cada palavra em maiúscula.
-let palavras2 = ['teste', 'seila', 'qualquer', 'coisa']
-let palavrasMaiusculo = palavras2.map((palavra)=> {
-    let [primeira, ...restante] = palavra
-    console.log(primeira, restante)
-    let novaletra = primeira.toUpperCase() 
-    return novaletra + restante.join('')
-})
-console.log(palavrasMaiusculo)
-
-//28. Verifique se todos os elementos são números com .every().
-let elementos = [3, 4,5,6,7,8]
-let saonumeros = elementos.every(elemento => typeof elemento === "number")
-console.log(saonumeros)
-
-//29. Verifique se ao menos um número é maior que 100 usando .some().
-let elementos2 = [33, 45,500,6,7,8]
-let teste = elementos2.some(elemento => elemento > 100)
-console.log(teste)
+console.log (CalcularMedia(numeros))
 
 
-//30. "Achatamento": transforme um array com subarrays em um único array plano (um nível só).
-let arraydearray = [34, 434, [342, 3, 656,4], [2, [45,34, [344,343]]]]
-let arrays = arraydearray.flat(3)
-console.log(arrays)
+// 💡 Exercícios com nomes
+// 1. Ordenar os nomes em ordem alfabética.
 
-// 32. Crie uma função que recebe um array de números e retorna a média.
+let nomesOrdemAlfabetica = nomes.sort()
+console.log (nomesOrdemAlfabetica)
 
-let notas = [5,6,7,8]
-function calcularMedia(array){
-    let soma = array.reduce((acumulador, atual)=> acumulador += atual ,0)
-    return soma/array.length
-}
-console.log(calcularMedia(notas))
+// 2. Filtrar os nomes com mais de 5 letras.
 
-//34. Rotacione os elementos de um array uma posição para a direita.
-function rotacionar(array) { 
-    array.unshift(array.pop()); 
-    return array; 
-}
-console.log(rotacionar(notas))
-//37. Conte as vogais em cada string de um array.
+let nomesMais5Letras = nomes.filter (nomes => nomes.length > 5)
+console.log (nomesMais5Letras)
 
-function contarVogais(palavra) { 
-    return (palavra.match(/[aeiou]/gi) || []).length 
-}
-let meuarray = ['palavra', 'teste', 'oi']
-console.log(meuarray.map(palavra=> {
-    return {
-        palavra: palavra,
-        vogais: contarVogais(palavra)
-    }
+// 3. Transformar todos os nomes em letras minúsculas.
+
+let nomesEmMinusculo = nomes.map (nomes => nomes.toLowerCase())
+console.log (nomesEmMinusculo)
+
+// 4. Verificar se algum nome começa com a letra “B”.
+
+let nomesComB = nomes.filter (nomes => nomes[0] === 'B')
+console.log (nomesComB)
+
+// 5. Encontrar o nome “Daniel” no array.
+
+let acharDaniel = nomes.find (nomes => nomes === 'Daniel')
+console.log (acharDaniel)
+
+// 6. Criar um array com a quantidade de letras de cada nome.
+
+let qtndLetraDosNomes = nomes.map (nomes => nomes.length)
+console.log (qtndLetraDosNomes)
+
+// 7. Juntar todos os nomes em uma string separada por vírgula.
+
+console.log (nomes.join (', '))
+
+// 💡 Exercícios com produtos
+// 1. Filtrar os produtos da categoria “Eletrônicos”.
+
+let mostrarEletronicos = produtos.filter (a => a.categoria === 'Eletrônicos')
+console.log (mostrarEletronicos)
+
+// 2. Criar um array apenas com os nomes dos produtos.
+
+let nomeProdutos = produtos.map (produtos => produtos.nome)
+console.log (nomeProdutos)
+
+// 3. Criar um array com os preços com desconto de 10%.
+
+let produtosComDesconto = produtos.map (produtos => ({
+    ...produtos,
+    preco: produtos.preco - (produtos.preco * 0.10).toFixed(2)
 }))
+console.log (produtosComDesconto)
 
-// 38. Gere um array com os 10 primeiros números pares.
-let pares = Array.from({length: 10}, (_, i) => i * 2);
+// 4. Calcular o valor total de todos os produtos.
 
-// 39. Gere um array com os quadrados dos números de 1 a 10.
-let quadrados = Array.from({length: 10}, (_, i) => (i+1) ** 2);
+let valorTotal = produtos.reduce ((soma, produto) => soma + produto.preco, 0)
+console.log (valorTotal)
 
-// 40. Compare dois arrays e retorne os elementos que existem em ambos.
-let arr1 = ['teste', 'palavra', 'qualquer coisa']
-let arr2 = ['testando', 'teste', 'palavra', 'programação']
-let comuns = arr1.filter(e => arr2.includes(e));
+// 5. Encontrar o produto mais caro.
 
-// 41. Faça um array de objetos com nome e nota, e filtre os aprovados (nota ≥ 7).
-let alunos = [{nome:'Ana',nota:8},{nome:'João',nota:5}]; 
-let aprovados = alunos.filter(a => a.nota >= 7);
+let produtoMaisCaro = produtos.reduce ((maisCaro, produtoAtual) => {
+    return produtoAtual.preco > maisCaro.preco ? produtoAtual:maisCaro 
+})
 
-// 42. Crie uma função que embaralha os elementos de um array.
-let elementosArray = [3,5 ,5,3,2,6,2]
-function embaralhar(arr) { 
-    return arr.sort(() => Math.random() - 0.5); 
+console.log (produtoMaisCaro)
+
+// 6. Ordenar os produtos do mais barato ao mais caro.
+
+let produtosCrescente = [produtos.sort((a, b) => a.preco - b.preco)]
+console.log (produtosCrescente)
+
+// 7. Agrupar os produtos por categoria (bônus - mais avançado).
+
+let produtosCategoria = [produtos.sort((a, b) => a.categoria - b.categoria)]
+console.log (produtosCategoria)
+
+// 8. Criar uma função que receba uma categoria e retorne os produtos dela.
+
+function buscarCategoria(categoria){
+    return produtos.filter (produtos => produtos.categoria === categoria)
 }
-embaralhar(elementosArray)
+let mostrarCategoria = buscarCategoria('Eletrônicos');//digite no parenteses a categoria q deseja
+console.log (mostrarCategoria)
 
+// 9. Criar um array com objetos apenas contendo nome e preço.
 
-// 43. Verifique se um array está em ordem crescente.
+let produtosSemCategoria = produtos.map (produtos => {
+    return {
+        nome: produtos.nome,
+        preco: produtos.preco
+    }
+})
+console.log (produtosSemCategoria)
 
-let arr = [1,2,3,4,5,6]
-let crescente = arr.every((v, i, a) => !i || a[i-1] <= v);
+// 10. Verificar se todos os produtos custam mais de R$ 5.
 
-// 44. Conte quantas strings têm mais de 5 letras em um array.
-let arrStrings = ['string1', 'alex', 'teste', 'paralelepipedo']
-let count = arr.filter(s => s.length > 5).length;
+let produtosMaiorQue5 = produtos.every (produtos => produtos.preco > 5)
+console.log(produtosMaiorQue5)
 
-// 45. Inverta as palavras de cada string de um array.
+// 🎯 Bônus (Desafios com Lógica)
+// 1. Dado o array numeros , crie um array apenas com os quadrados dos números
+// pares.
 
-let invertidas = arrStrings.map(p => p.split('').reverse().join(''));
+let numQuadradoPar = numeros.filter (numeros => numeros % 2 === 0).map (numeros => numeros ** 2)
+console.log (numQuadradoPar)
 
+// 2. A partir de nomes , retorne o nome com maior quantidade de letras.
 
-// 46. Crie um array com os dias da semana e exiba apenas os do fim de semana.
-let dias = ['Dom','Seg','Ter','Qua','Qui','Sex','Sáb']; 
-let fimSemana = dias.filter(d => d === 'Dom' || d === 'Sáb');
+let tamanhoMaxNome = Math.max (...nomes.map(nome => nome.length))
+let maioresNomes = nomes.filter (nome => nome.length === tamanhoMaxNome)
+console.log (maioresNomes)
 
-// 47. Separe os números negativos e positivos de um array.
-let arrNumeros = [-2,4,50, -100, 34]
-let positivos = arrNumeros.filter(n => n >= 0); 
-let negativos = arrNumeros.filter(n => n < 0);
+// 3. Verifique se todos os nomes terminam com uma vogal.
 
+let nomesFimVogal = nomes.every (nome => {
+    let ultimaLetra = nome[nome.length - 1].toLowerCase()
+    return ['a', 'e', 'i', 'o', 'u'].includes(ultimaLetra)
+})
+console.log (nomesFimVogal)
 
-// 48. Crie uma função que retorna o segundo maior número de um array.
-function segundoMaior(arr) { 
-    //set para remover os dados duplicados pessoal, sort com o b-a lembram? pra ordenar em order decrescente(do maior para o menor)
-    let s = [...new Set(arr)].sort((a,b)=>b-a); 
-    return s[1]; 
+// 4. Junte os arrays numeros e nomes em um único array.
+
+let arrayNomeNumero = [...nomes, ...numeros]
+console.log (arrayNomeNumero)
+
+// 5. Crie um array com os nomes dos produtos que custam menos de R$100 e
+// pertencem a “Roupas”.
+
+let roupasMenorQue100 = produtos.filter (a => a.categoria === 'Roupas').map (produtos => {
+    if (produtos.preco < 100 ){
+        return{
+        nome: produtos.nome,
+        preco: produtos.preco
+    }
+    }else{
+
+    }
+})
+console.log (roupasMenorQue100)
+
+// 6. Crie uma função que calcule o valor médio dos produtos da categoria
+// “Eletrônicos”.
+function calcularMediaEletro(){
+let eletros = produtos.filter (a => a.categoria === 'Eletrônicos')
+let soma = eletros.reduce ((total, produtos) => total + produtos.preco, 0)
+let media = soma/eletros.length 
+return media
 }
-
-// 49. Conte quantas vezes cada letra aparece em um array de strings.
-let stringsArray = ['string1', 'alex', 'teste', 'paralelepipedo']
-
-let texto = stringsArray.join('').toLowerCase(); 
-let contagem = {}; 
-for (let l of texto) {
-    contagem[l] = (contagem[l]||0)+1;
-}
-
-// 50. Transforme um array de strings em um array de objetos com { valor: string,
-// tamanho: número de caracteres }.
-let stringsArray2 = ['string1', 'alex', 'teste', 'paralelepipedo']
-
-let objetos = stringsArray2.map(s => ({ valor: s, tamanho: s.length }));
+console.log ("Média do valor dos eletros: ", calcularMediaEletro())
