@@ -18,7 +18,7 @@ console.log(totalSoma);
 const numero4 = [5, 12, 8, 130, 44, 7, 3, 19, 22];
 const numeroMaior = Math.max(...numero4);
 console.log(numeroMaior);
-
+  
 
 // 5. Encontrar o menor número.
 const numero5 = [5, 12, 8, 130, 44, 7, 3, 19, 22];
