@@ -1,5 +1,5 @@
-// 📘 Lista de Exercícios – Operações com Arrays
-// 📌 Array de Entrada:
+//Lista de Exercícios – Operações com Arrays
+
 
 const numeros = [5, 12, 8, 130, 44, 7, 3, 19, 22];
 const nomes = ["Ana", "Carlos", "Beatriz", "Daniel", "Eduarda", "Bruno"];
@@ -11,7 +11,7 @@ const produtos = [
  { nome: "Teclado", preco: 120, categoria: "Eletrônicos" }
 ];
 
-// 💡 Exercícios com numeros
+//Exercícios com numeros
 // 1. Filtrar números maiores que 10.
 
 let numerosMaiores10 = numeros.filter (numeros => numeros > 10)
