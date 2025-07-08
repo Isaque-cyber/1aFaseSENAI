@@ -71,7 +71,7 @@ const produtos = [
 // 6. Função buscar produto (Capacidades: 1, 2, 3, 4, 5, 7, 8, 9, 10)
 // ● Crie uma função que busca um produto pelo nome:
 
-}
+
 
 // 7. Listar tarefas pendentes (Capacidades: 1, 2, 3, 4, 5, 7, 8, 9, 10)
 // ● Filtre as tarefas não concluídas e liste com prefixo "Pendente: ...":
