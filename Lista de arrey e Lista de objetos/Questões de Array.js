@@ -27,20 +27,30 @@ console.log(letrasMaiuscula)
 //     3. Cálculo de estoque (Capacidades: 1, 2, 3, 4, 5, 7, 8, 9, 10)
 // ● A partir do array abaixo, calcule o saldo final do estoque:
   const transacoes = [
-    {tipo: "entrada", valor: 50},
-    {tipo: "saída", valor: 20},
-    {tipo: "entrada",  valor: 70},
-    {tipo: "entrada", valor: 35},
-    {tipo: "saida", valor: 15}
-  ];
-  let saldoFinal = 0; transacoes.forEach(transacao => {
-    if (transacao.tipo == "entrada") {
-      saldoFinal += transacao.valor;
-    } else {
-      saldoFinal -= transacao.valor;
-    }
-  });
-  console.log(saldoFinal); 
+    {tipo: "Entrada", valor:20},
+    {tipo: "Entrada", valor:50},
+    {tipo: "Saida", valor:23},
+    {tipo: "Saida", valor:25},
+
+  ]
+
+// const transacoes = [
+//     {tipo: "entrada", valor: 50},
+//     {tipo: "saída", valor: 20},
+//     {tipo: "entrada",  valor: 70},
+//     {tipo: "entrada", valor: 35},
+//     {tipo: "saida", valor: 15}
+//   ];
+//   let saldoFinal = 0; transacoes.forEach(transacao => {
+//     if (transacao.tipo == "entrada") {
+//       saldoFinal += transacao.valor;
+//     } else {
+//       saldoFinal -= transacao.valor;
+//     }
+//   });
+//   console.log(saldoFinal);    
+
+
 
 // 4. Aplicar desconto em produtos (Capacidades: 1, 2, 3, 4, 5, 7, 8, 9, 10)
 // ● Crie uma função que aplica 10% de desconto em produtos com valor > R$100.
@@ -49,7 +59,6 @@ const produtos = [
     {nome:"celular", valor: 300},
     {nome:"carregador", valor: 50}
 ]
-const desconto = produtos.reduce
 
 
 
@@ -62,6 +71,8 @@ const desconto = produtos.reduce
 // 6. Função buscar produto (Capacidades: 1, 2, 3, 4, 5, 7, 8, 9, 10)
 // ● Crie uma função que busca um produto pelo nome:
 
+}
 
 // 7. Listar tarefas pendentes (Capacidades: 1, 2, 3, 4, 5, 7, 8, 9, 10)
 // ● Filtre as tarefas não concluídas e liste com prefixo "Pendente: ...":
+
