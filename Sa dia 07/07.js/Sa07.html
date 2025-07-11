@@ -1,29 +1,21 @@
-// Função para criar um card
-function criarCard(conteudo) {
-    const card = document.createElement('div');
-    card.classList.add('Card'); // Adiciona uma classe para estilização
-    card.textContent = conteudo; // Define o conteúdo do card
-    return card;
+function mostrarCards(){
+  const habitos = JSON.parse(localStorage.getItem("habitos")) || []
+  console.log (habitos)
+
+  document.getElementById("CardsContainer").innerHTML +=''
+  for(let i=0; i < habitos.length; i++){
+      document.getElementById("CardsContainer").innerHTML +=`
+      <div id="Card">
+          <h3>${habitos[i].NomeDoHábito}</h3>
+          <p>${habitos[i].Descrição}</p>
+          <p>Meta : ${habitos[i].Meta}</p>
+          <p>Notas : ${habitos[i].Notas}</p>
+  
+      </div>
+      `
+
   }
-  
-  // Recupera os dados do localStorage
-  const dados = localStorage.getItem('habitos');
-  
-  // Verifica se existem dados
-  if (dados) {
-    // Converte os dados de volta para um array (se estiverem armazenados como JSON)
-    const dadosArray = JSON.parse(dados);
-  
-    // Obtém o elemento pai onde os cards serão adicionados
-    const container = document.getElementById('container-cards');
-  
-    // Itera sobre os dados e cria um card para cada item
-    dadosArray.forEach(item => {
-      const card = criarCard(item);
-      container.appendChild(card);
-    });
-  } else {
-    // Se não houver dados, exibe uma mensagem
-    const container = document.getElementById('container-cards');
-    container.textContent = 'Nenhum dado encontrado no localStorage.';
-  } 
+
+}
+
+mostrarCards()
