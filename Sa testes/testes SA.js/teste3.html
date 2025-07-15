@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lista de Compras</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #f4f4f4;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    #form-container {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      width: 300px;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 10px 15px;
+      margin-left: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      max-width: 500px;
+      margin: auto;
+    }
+
+    li {
+      background-color: #fff;
+      padding: 10px;
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border: 1px solid #ccc;
+    }
+
+    .actions button {
+      margin-left: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Lista de Compras</h1>
+
+  <div id="form-container">
+    <input type="text" id="itemInput" placeholder="Digite um item..." />
+    <button onclick="addItem()">Adicionar</button>
+  </div>
+
+  <ul id="shoppingList"></ul>
+
+  <script>
+    const itemInput = document.getElementById("itemInput");
+    const shoppingList = document.getElementById("shoppingList");
+
+    let editIndex = null;
+
+    function addItem() {
+      const value = itemInput.value.trim();
+
+      if (value === "") {
+        alert("Digite um item válido.");
+        return;
+      }
+
+      if (editIndex !== null) {
+        // Editando item existente
+        shoppingList.children[editIndex].querySelector(".text").textContent = value;
+        editIndex = null;
+        itemInput.value = "";
+      } else {
+        // Adicionando novo item
+        const li = document.createElement("li");
+
+        const span = document.createElement("span");
+        span.className = "text";
+        span.textContent = value;
+
+        const actions = document.createElement("div");
+        actions.className = "actions";
+
+        const editBtn = document.createElement("button");
+        editBtn.textContent = "Editar";
+        editBtn.onclick = () => editItem(li);
+
+        const deleteBtn = document.createElement("button");
+        deleteBtn.textContent = "Excluir";
+        deleteBtn.onclick = () => shoppingList.removeChild(li);
+
+        actions.appendChild(editBtn);
+        actions.appendChild(deleteBtn);
+
+        li.appendChild(span);
+        li.appendChild(actions);
+
+        shoppingList.appendChild(li);
+        itemInput.value = "";
+      }
+    }
+
+    function editItem(li) {
+      const index = Array.from(shoppingList.children).indexOf(li);
+      itemInput.value = li.querySelector(".text").textContent;
+      editIndex = index;
+    }
+  </script>
+</body>
+</html>

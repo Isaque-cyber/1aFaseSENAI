@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lista de Compras com Cards</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f2f5;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    #form-container {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      width: 300px;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 10px 15px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    #cards-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+    }
+
+    .card {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 15px;
+      width: 200px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .card p {
+      margin: 0 0 10px;
+      word-break: break-word;
+    }
+
+    .card .actions {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .card .actions button {
+      font-size: 14px;
+      padding: 5px 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Lista de Compras</h1>
+
+  <div id="form-container">
+    <input type="text" id="itemInput" placeholder="Digite um item..." />
+    <button onclick="addOrUpdateItem()">Salvar</button>
+  </div>
+
+  <div id="cards-container"></div>
+
+  <script>
+    const itemInput = document.getElementById("itemInput");
+    const cardsContainer = document.getElementById("cards-container");
+    let items = JSON.parse(localStorage.getItem("shoppingList")) || [];
+    let editingIndex = null;
+
+    function saveToLocalStorage() {
+      localStorage.setItem("shoppingList", JSON.stringify(items));
+    }
+
+    function renderCards() {
+      cardsContainer.innerHTML = "";
+
+      items.forEach((item, index) => {
+        const card = document.createElement("div");
+        card.className = "card";
+
+        const itemText = document.createElement("p");
+        itemText.textContent = item;
+
+        const actions = document.createElement("div");
+        actions.className = "actions";
+
+        const editBtn = document.createElement("button");
+        editBtn.textContent = "Editar";
+        editBtn.onclick = () => editItem(index);
+
+        const deleteBtn = document.createElement("button");
+        deleteBtn.textContent = "Excluir";
+        deleteBtn.onclick = () => deleteItem(index);
+
+        actions.appendChild(editBtn);
+        actions.appendChild(deleteBtn);
+
+        card.appendChild(itemText);
+        card.appendChild(actions);
+
+        cardsContainer.appendChild(card);
+      });
+    }
+
+    function addOrUpdateItem() {
+      const value = itemInput.value.trim();
+      if (value === "") {
+        alert("Digite um item válido.");
+        return;
+      }
+
+      if (editingIndex !== null) {
+        items[editingIndex] = value;
+        editingIndex = null;
+      } else {
+        items.push(value);
+      }
+
+      itemInput.value = "";
+      saveToLocalStorage();
+      renderCards();
+    }
+
+    function editItem(index) {
+      itemInput.value = items[index];
+      editingIndex = index;
+    }
+
+    function deleteItem(index) {
+      if (confirm("Deseja excluir este item?")) {
+        items.splice(index, 1);
+        saveToLocalStorage();
+        renderCards();
+      }
+    }
+
+    // Renderizar ao iniciar
+    renderCards();
+  </script>
+</body>
+</html>
